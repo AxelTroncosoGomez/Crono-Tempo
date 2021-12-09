@@ -1,0 +1,60 @@
+#:kivy 2.0.0
+
+<Cronometro>
+    temporizador: texto
+
+    GridLayout:
+        size: root.width - 200, root.height - 200
+        pos: 100, 100
+        cols: 1
+        Image:
+            source: '12.png'
+            allow_stretch: True
+        GridLayout:
+            cols: 2
+            Label:
+                id: texto
+                width: 80
+                text: '01:00:00'
+                color: [149, 208, 168, 1]
+                font_family: 'Verdana'
+                font_size: 70
+            GridLayout:
+                size_hint_x: None
+                rows: 2
+                GridLayout:
+                    padding: [10, 5, 10, 5]
+                    rows: 1
+                    BubbleButton:
+                        text: '+'
+                        bold: True
+                        background_color: '#00FFCE'
+                        font_size: 30
+                        on_press: root.plus()
+                GridLayout:
+                    rows: 1
+                    padding: [10, 5, 10, 5]
+                    BubbleButton:
+                        text: '-' 
+                        bold: True
+                        background_color: '#00FFCE'
+                        font_size: 30
+                        on_press: root.minus()      
+        GridLayout:
+            cols: 2
+            size_hint: 1, 0.5
+            Button:
+                text: 'Start' 
+                size_hint: 1, 0.5
+                bold: True
+                background_color: '#00FFCE'
+                font_size: 30
+                on_press: root.start()
+            Button:
+                text: 'Stop' 
+                size_hint: 1, 0.5
+                bold: True
+                background_color: '#00FFCE'
+                font_size: 30
+                on_press: root.stop()
+                
